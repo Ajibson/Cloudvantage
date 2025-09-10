@@ -9,6 +9,7 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfil
 # Define the trigger: run at startup, and repeat every 1 minute indefinitely
 $trigger = New-ScheduledTaskTrigger -AtStartup
 $trigger.Repetition = (New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1)).Repetition
+###################### RunOnlyIfLoggedOn is False
 
 # Define task settings: no execution time limit, start when available
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -ExecutionTimeLimit ([System.TimeSpan]::Zero)
