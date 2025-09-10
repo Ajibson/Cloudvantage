@@ -4,7 +4,7 @@ $SERVER_ID   = $meta.uuid
 $PROJECT_ID  = $meta.project_id
 $CLEAN_NAME  = $meta.name
 $DISK_USAGE  = (Get-PSDrive C).Used
-$LOG_FILE    = "C:\log.txt"
+$LOG_FILE    = "C:\Users\Administrator\Documents\log.txt"
 
 # Create JSON object and store in file $LOG_FILE variable for debugging purpose
 $data = @{
