@@ -1,6 +1,6 @@
 $taskName = "ReportDiskUsage"
 $taskDescription = "Perpetually logs disk usage to a file."
-$executablePath = "C:\Users\Administrator\Documents\log_meta.ps1"
+$executablePath = "C:\log_meta.ps1" # "C:\Users\Administrator\Documents\log_meta.ps1"
 $taskUser = "NT AUTHORITY\SYSTEM"
 
 # Define the action to run the PowerShell script
