@@ -1,6 +1,6 @@
 $taskName        = "BootstrapReportDiskUsage"
 $taskDescription = "Perpetually logs disk usage to a file."
-$executablePath  = "C:\powershell-script\trigger2.ps1"
+$executablePath  = "C:\ProgramData\Cloudvantage\trigger.ps1"
 $taskUser        = "NT AUTHORITY\SYSTEM"
 
 # Define the action
