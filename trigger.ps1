@@ -1,3 +1,4 @@
+# This is a script that triggers the log_meta.ps1 script to gather hard disk metrics every 5 minutes
 $taskName        = "ReportDiskUsage"
 $taskDescription = "Perpetually logs disk usage to a file."
 $executablePath  = "C:\ProgramData\Cloudvantage\log_meta.ps1"
