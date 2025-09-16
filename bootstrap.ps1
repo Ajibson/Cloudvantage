@@ -1,3 +1,4 @@
+# This is a Bootstrap script that retriggers the trigger.ps1 script every time the server is started
 $taskName        = "BootstrapReportDiskUsage"
 $taskDescription = "Perpetually logs disk usage to a file."
 $executablePath  = "C:\ProgramData\Cloudvantage\trigger.ps1"
