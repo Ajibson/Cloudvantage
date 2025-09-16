@@ -1,4 +1,5 @@
-# This script gathers the used disk space (in bytes) and it uses the meta data to get the unique data of the server in question and output it to the CVG monitoring endpoint.
+# This script gathers the used disk space (in bytes) and it uses the meta data to get the unique data of the server in 
+# question and output it to the CVG monitoring endpoint.
 # Define variables
 $meta        = Invoke-RestMethod -Uri http://169.254.169.254/openstack/latest/meta_data.json
 $SERVER_ID   = $meta.uuid
