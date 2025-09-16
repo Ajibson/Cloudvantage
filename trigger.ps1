@@ -8,7 +8,7 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" `
           -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$executablePath`""
 
 # Define triggers
-$trigger2 = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1) -RepetitionDuration (New-TimeSpan -Days 9999)
+$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1) -RepetitionDuration (New-TimeSpan -Days 9999)
 
 # Define task settings: no execution time limit, start when available
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -ExecutionTimeLimit ([System.TimeSpan]::Zero)
@@ -17,7 +17,7 @@ $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -ExecutionTimeLimit
 Register-ScheduledTask -TaskName $taskName `
     -Description $taskDescription `
     -Action $action `
-    -Trigger $trigger2 `
+    -Trigger $trigger `
     -Settings $settings `
     -User $taskUser `
     -RunLevel Highest `
