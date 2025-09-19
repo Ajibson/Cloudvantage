@@ -5,7 +5,12 @@ $meta        = Invoke-RestMethod -Uri http://169.254.169.254/openstack/latest/me
 $SERVER_ID   = $meta.uuid
 $PROJECT_ID  = $meta.project_id
 $CLEAN_NAME  = $meta.name
-$DISK_USAGE  = (Get-PSDrive C).Used
+# $DISK_USAGE  = (Get-PSDrive C).Used
+$drive = Get-PSDrive C
+$DISK_TOTAL = $drive.Used + $drive.Free
+$DISK_USAGE = $drive.Used  
+$DISK_FREE = $drive.Free
+
 $MONITORING_ENDPOINT = "https://cloudvantage-monitoring-endpoint.example.com/disk-report"
 $LOG_FILE    = "C:\Users\Administrator\Documents\log.txt"
 
@@ -17,6 +22,8 @@ $data = @{
         server_name = $CLEAN_NAME
     }
     disk_usage = $DISK_USAGE
+    disk_total = $DISK_TOTAL    
+    disk_free  = $DISK_FREE 
 }
 
 # Convert to JSON and append to file for demo/debugging purpose
@@ -30,6 +37,8 @@ $body = @{
     server_name = $CLEAN_NAME
     project_id  = $PROJECT_ID
     disk_usage  = $DISK_USAGE
+    disk_total  = $DISK_TOTAL    
+    disk_free   = $DISK_FREE
 } | ConvertTo-Json
 
 try {
