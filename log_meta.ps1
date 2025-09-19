@@ -11,7 +11,7 @@ $DISK_TOTAL = $drive.Used + $drive.Free
 $DISK_USAGE = $drive.Used  
 $DISK_FREE = $drive.Free
 
-$MONITORING_ENDPOINT = "https://cloudvantage-monitoring-endpoint.example.com/disk-report"
+$MONITORING_ENDPOINT = "https://b7f619d995d0.ngrok-free.app/api/v1/openstack/servers/metrics/disk-report"
 $LOG_FILE    = "C:\Users\Administrator\Documents\log.txt"
 
 # Create JSON object and store in file $LOG_FILE variable for debugging purpose
